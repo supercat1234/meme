@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>meme</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+</head>
+<body>
+		<select id="meme">
+			<option value="1990s-First-World-Problems">1990s First World Problems</option>
+			<option value="1st-World-Canadian-Problems">1st World Canadian Problems</option>
+			<option value="2nd-Term-Obama">2nd Term Obama</option>
+			<option value="Turkey">Turkey</option>        
+            <option value="Tuxedo-Winnie-The-Pooh">Tuxedo Winnie The Pooh</option>
+            <option value="Two-Buttons">Two Buttons</option>
+            <option value="UNO-Draw-25-Cards">UNO Draw 25 Cards</option>
+            <option value="USA-Lifter">USA Lifter</option>
+            <option value="Ugly-Twins">Ugly Twins</option>
+            <option value="Uncle-Sam">Uncle Sam</option>
+            <option value="Unhappy-Baby">Unhappy Baby</option>
+            <option value="Unhelpful-High-School-Teacher">Unhelpful High School Teacher</option>
+            <option value="Welcome-To-The-Internets">Welcome To The Internets</option>       
+            <option value="Well-That-Escalated-Quickly">Well That Escalated Quickly</option>
+            <option value="What-Do-We-Want">What Do We Want</option>
+            <option value="What-Do-We-Want-3">What Do We Want 3</option>
+            <option value="Thumbs-Up-Emoji">Thumbs Up Emoji</option>
+            <option value="Time-To-Fap">Time To Fap</option>
+            <option value="Today-Was-A-Good-Day">Today Was A Good Day</option>
+            <option value="Tom-Hardy-">Tom Hardy </option>
+            <option value="Tomas-Rosicky">Tomas Rosicky</option>
+            <option value="The-Probelm-Is">The Probelm Is</option>
+		</select>
+		<input type="text" id="top-text" placeholder="Top text" value="">
+		<input type="text" id="bottom-text" placeholder="Bottom text" value="">
+		<button id="submitBtn">Generate</button>
+	<img id="memeImg" src="">
+	<script type="text/javascript">
+		var api = 'https://apimeme.com/meme?';
+		$('#submitBtn').on({
+		    'click': function(){
+		    	zvezda();
+		    }
+		});
+		$('#top-text').on({
+		    'input': function(){
+		    	zvezda();
+		    }
+		});
+		$('#bottom-text').on({
+		    'input': function(){
+		    	zvezda();
+		    }
+		});
+		$('#meme').on({
+		    'change': function(){
+		    	zvezda();
+		    }
+		});
+		function zvezda() {
+			var meme = $('#meme').val();
+			var top = $('#top-text').val();
+			var bottom = $('#bottom-text').val();
+			var result = api + 'meme=' + meme + '&top=' + top + '&bottom=' + bottom;
+		    $('#memeImg').attr('src', result);
+		}
+	</script>
+</body>
+</html>
